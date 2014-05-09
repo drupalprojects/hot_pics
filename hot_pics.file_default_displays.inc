@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * panopoly_images.file_default_displays.inc
+ * hot_pics.file_default_displays.inc
  */
 
 /**
  * Implements hook_file_default_displays().
  */
-function panopoly_images_file_default_displays() {
+function hot_pics_file_default_displays() {
   $export = array();
 
   $file_display = new stdClass();
@@ -172,7 +172,7 @@ function panopoly_images_file_default_displays() {
   $file_display->weight = 5;
   $file_display->status = TRUE;
   $file_display->settings = array(
-    'image_style' => 'panopoly_image_thumbnail',
+    'image_style' => 'hotsauce_image_thumbnail',
   );
   $export['image__preview__file_image'] = $file_display;
 
@@ -224,7 +224,7 @@ function panopoly_images_file_default_displays() {
   $file_display->weight = 5;
   $file_display->status = TRUE;
   $file_display->settings = array(
-    'image_style' => 'panopoly_image_quarter',
+    'image_style' => 'hotsauce_image_quarter',
   );
   $export['image__teaser__file_image'] = $file_display;
 

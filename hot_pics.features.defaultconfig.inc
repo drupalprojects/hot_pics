@@ -1,15 +1,15 @@
 <?php
 /**
  * @file
- * panopoly_images.features.defaultconfig.inc
+ * hot_pics.features.defaultconfig.inc
  */
 
 /**
  * Implements hook_defaultconfig_features().
  */
-function panopoly_images_defaultconfig_features() {
+function hot_pics_defaultconfig_features() {
   return array(
-    'panopoly_images' => array(
+    'hot_pics' => array(
       'strongarm' => 'strongarm',
     ),
   );
@@ -18,7 +18,7 @@ function panopoly_images_defaultconfig_features() {
 /**
  * Implements hook_defaultconfig_strongarm().
  */
-function panopoly_images_defaultconfig_strongarm() {
+function hot_pics_defaultconfig_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
@@ -47,7 +47,7 @@ function panopoly_images_defaultconfig_strongarm() {
     'manualcrop_maximize_default_crop_area' => 0,
     'manualcrop_styles_mode' => 'include',
     'manualcrop_styles_list' => array(
-      'panopoly_image_full' => 'panopoly_image_full',
+      'hotsauce_image_full' => 'hotsauce_image_full',
     ),
     'manualcrop_require_cropping' => array(),
   );

@@ -1,4 +1,4 @@
-Panopoly Images
+hotsauce Images
 ===============
 Provides common image styles and helps make them responsive!
 
@@ -8,10 +8,10 @@ Key Features
 * Responsive CSS logic for image styles
 
 Image Styles
-* Featured - Integrated with the featured view mode provided by Panopoly Theme
+* Featured - Integrated with the featured view mode provided by hotsauce Theme
 * Full - Provides images at full width
 * Half - Provides images at half width
 * Quarter - Provides images at quarter width
-* Spotlight - Integrated with the spotlight entity provided by Panopoly Widgets
+* Spotlight - Integrated with the spotlight entity provided by hotsauce Widgets
 * Square - Provides images cropped to a square ratios
 * Thumbnail - Provides a small thumbnail of the image, suitable for previewing

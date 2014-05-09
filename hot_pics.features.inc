@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * panopoly_images.features.inc
+ * hot_pics.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function panopoly_images_ctools_plugin_api($module = NULL, $api = NULL) {
+function hot_pics_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "file_entity" && $api == "file_default_displays") {
     return array("version" => "1");
   }
@@ -19,13 +19,13 @@ function panopoly_images_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_image_default_styles().
  */
-function panopoly_images_image_default_styles() {
+function hot_pics_image_default_styles() {
   $styles = array();
 
-  // Exported image style: panopoly_image_featured.
-  $styles['panopoly_image_featured'] = array(
-    'name' => 'panopoly_image_featured',
-    'label' => 'panopoly_image_featured',
+  // Exported image style: hotsauce_image_featured.
+  $styles['hotsauce_image_featured'] = array(
+    'name' => 'hotsauce_image_featured',
+    'label' => 'hotsauce_image_featured',
     'effects' => array(
       7 => array(
         'label' => 'Manual Crop: Custom crop',
@@ -39,8 +39,8 @@ function panopoly_images_image_default_styles() {
           'width' => 48,
           'height' => 26,
           'keepproportions' => 1,
-          'reuse_crop_style' => 'panopoly_image_full',
-          'style_name' => 'panopoly_image_featured',
+          'reuse_crop_style' => 'hotsauce_image_full',
+          'style_name' => 'hotsauce_image_featured',
         ),
         'weight' => 0,
       ),
@@ -79,10 +79,10 @@ function panopoly_images_image_default_styles() {
     ),
   );
 
-  // Exported image style: panopoly_image_full.
-  $styles['panopoly_image_full'] = array(
-    'name' => 'panopoly_image_full',
-    'label' => 'panopoly_image_full',
+  // Exported image style: hotsauce_image_full.
+  $styles['hotsauce_image_full'] = array(
+    'name' => 'hotsauce_image_full',
+    'label' => 'hotsauce_image_full',
     'effects' => array(
       2 => array(
         'label' => 'Manual Crop: Custom crop',
@@ -97,7 +97,7 @@ function panopoly_images_image_default_styles() {
           'height' => 20,
           'keepproportions' => 0,
           'reuse_crop_style' => '',
-          'style_name' => 'panopoly_image_full',
+          'style_name' => 'hotsauce_image_full',
         ),
         'weight' => 1,
       ),
@@ -120,10 +120,10 @@ function panopoly_images_image_default_styles() {
     ),
   );
 
-  // Exported image style: panopoly_image_half.
-  $styles['panopoly_image_half'] = array(
-    'name' => 'panopoly_image_half',
-    'label' => 'panopoly_image_half',
+  // Exported image style: hotsauce_image_half.
+  $styles['hotsauce_image_half'] = array(
+    'name' => 'hotsauce_image_half',
+    'label' => 'hotsauce_image_half',
     'effects' => array(
       17 => array(
         'label' => 'Manual Crop: Reuse cropped style',
@@ -134,7 +134,7 @@ function panopoly_images_image_default_styles() {
         'module' => 'manualcrop',
         'name' => 'manualcrop_reuse',
         'data' => array(
-          'reuse_crop_style' => 'panopoly_image_full',
+          'reuse_crop_style' => 'hotsauce_image_full',
         ),
         'weight' => 0,
       ),
@@ -157,10 +157,10 @@ function panopoly_images_image_default_styles() {
     ),
   );
 
-  // Exported image style: panopoly_image_quarter.
-  $styles['panopoly_image_quarter'] = array(
-    'name' => 'panopoly_image_quarter',
-    'label' => 'panopoly_image_quarter',
+  // Exported image style: hotsauce_image_quarter.
+  $styles['hotsauce_image_quarter'] = array(
+    'name' => 'hotsauce_image_quarter',
+    'label' => 'hotsauce_image_quarter',
     'effects' => array(
       18 => array(
         'label' => 'Manual Crop: Reuse cropped style',
@@ -171,7 +171,7 @@ function panopoly_images_image_default_styles() {
         'module' => 'manualcrop',
         'name' => 'manualcrop_reuse',
         'data' => array(
-          'reuse_crop_style' => 'panopoly_image_full',
+          'reuse_crop_style' => 'hotsauce_image_full',
         ),
         'weight' => 0,
       ),
@@ -194,10 +194,10 @@ function panopoly_images_image_default_styles() {
     ),
   );
 
-  // Exported image style: panopoly_image_spotlight.
-  $styles['panopoly_image_spotlight'] = array(
-    'name' => 'panopoly_image_spotlight',
-    'label' => 'panopoly_image_spotlight',
+  // Exported image style: hotsauce_image_spotlight.
+  $styles['hotsauce_image_spotlight'] = array(
+    'name' => 'hotsauce_image_spotlight',
+    'label' => 'hotsauce_image_spotlight',
     'effects' => array(
       11 => array(
         'label' => 'Manual Crop: Custom crop',
@@ -211,8 +211,8 @@ function panopoly_images_image_default_styles() {
           'width' => 96,
           'height' => 56,
           'keepproportions' => 1,
-          'reuse_crop_style' => 'panopoly_image_full',
-          'style_name' => 'panopoly_image_spotlight',
+          'reuse_crop_style' => 'hotsauce_image_full',
+          'style_name' => 'hotsauce_image_spotlight',
         ),
         'weight' => 1,
       ),
@@ -234,10 +234,10 @@ function panopoly_images_image_default_styles() {
     ),
   );
 
-  // Exported image style: panopoly_image_square.
-  $styles['panopoly_image_square'] = array(
-    'name' => 'panopoly_image_square',
-    'label' => 'panopoly_image_square',
+  // Exported image style: hotsauce_image_square.
+  $styles['hotsauce_image_square'] = array(
+    'name' => 'hotsauce_image_square',
+    'label' => 'hotsauce_image_square',
     'effects' => array(
       13 => array(
         'label' => 'Manual Crop: Custom crop',
@@ -251,8 +251,8 @@ function panopoly_images_image_default_styles() {
           'width' => 20,
           'height' => 20,
           'keepproportions' => 1,
-          'reuse_crop_style' => 'panopoly_image_full',
-          'style_name' => 'panopoly_image_square',
+          'reuse_crop_style' => 'hotsauce_image_full',
+          'style_name' => 'hotsauce_image_square',
         ),
         'weight' => 0,
       ),
@@ -274,10 +274,10 @@ function panopoly_images_image_default_styles() {
     ),
   );
 
-  // Exported image style: panopoly_image_thumbnail.
-  $styles['panopoly_image_thumbnail'] = array(
-    'name' => 'panopoly_image_thumbnail',
-    'label' => 'panopoly_image_thumbnail',
+  // Exported image style: hotsauce_image_thumbnail.
+  $styles['hotsauce_image_thumbnail'] = array(
+    'name' => 'hotsauce_image_thumbnail',
+    'label' => 'hotsauce_image_thumbnail',
     'effects' => array(
       15 => array(
         'label' => 'Manual Crop: Custom crop',
@@ -291,8 +291,8 @@ function panopoly_images_image_default_styles() {
           'width' => 20,
           'height' => 20,
           'keepproportions' => 1,
-          'reuse_crop_style' => 'panopoly_image_full',
-          'style_name' => 'panopoly_image_thumbnail',
+          'reuse_crop_style' => 'hotsauce_image_full',
+          'style_name' => 'hotsauce_image_thumbnail',
         ),
         'weight' => 0,
       ),
@@ -315,10 +315,10 @@ function panopoly_images_image_default_styles() {
     ),
   );
 
-  // Exported image style: panopoly_image_video.
-  $styles['panopoly_image_video'] = array(
-    'name' => 'panopoly_image_video',
-    'label' => 'panopoly_image_video',
+  // Exported image style: hotsauce_image_video.
+  $styles['hotsauce_image_video'] = array(
+    'name' => 'hotsauce_image_video',
+    'label' => 'hotsauce_image_video',
     'effects' => array(
       16 => array(
         'label' => 'Scale and crop',

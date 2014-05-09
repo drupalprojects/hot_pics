@@ -8,16 +8,16 @@ img {
 }
 
 /**
- * Image styling 
+ * Image styling
  */
-img.panopoly-image-full {
+img.hotsauce-image-full {
   max-width: 100%;
   width: 100% !important;
   height: auto;
   margin-bottom: .5em;
 }
 
-img.panopoly-image-half {
+img.hotsauce-image-half {
   max-width: 50%;
   width: 50%;
   height: auto;
@@ -27,7 +27,7 @@ img.panopoly-image-half {
   margin-top: .5em;
 }
 
-img.panopoly-image-quarter {
+img.hotsauce-image-quarter {
   max-width: 25%;
   width: 25%;
   height: auto;
@@ -37,17 +37,17 @@ img.panopoly-image-quarter {
   margin-top: .25em;
 }
 
-img.panopoly-image-featured {
+img.hotsauce-image-featured {
   max-width: 100%;
   height: auto;
 }
 
-img.panopoly-image-thumbnail {
+img.hotsauce-image-thumbnail {
   max-width: 100%;
   height: auto;
 }
 
-img.panopoly-image-square {
+img.hotsauce-image-square {
   max-width: 100%;
   height: auto;
 }

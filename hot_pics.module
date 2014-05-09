@@ -1,21 +1,21 @@
 <?php
 
-include_once('panopoly_images.features.inc');
+include_once('hot_pics.features.inc');
 
 /**
  * Implementation of hook_init()
  */
-function panopoly_images_init() {
+function hot_pics_init() {
 
-  // Adding the panopoly images file to the theme so it will show up in the WYSIWYG
-  drupal_add_css(drupal_get_path('module', 'panopoly_images') . '/panopoly-images.css', array('group' => CSS_THEME));
+  // Adding the hotsauce images file to the theme so it will show up in the WYSIWYG
+  drupal_add_css(drupal_get_path('module', 'hot_pics') . '/hotsauce-images.css', array('group' => CSS_THEME));
 }
 
 
 /**
  * Implements hook_media_wysiwyg_wysiwyg_allowed_view_modes_alter().
  */
-function panopoly_images_media_wysiwyg_wysiwyg_allowed_view_modes_alter(&$options, $context) {
+function hot_pics_media_wysiwyg_wysiwyg_allowed_view_modes_alter(&$options, $context) {
   if ($context->type == 'image') {
     // Relabel some options
     $options['default']['label'] = t('Original Size');
@@ -27,7 +27,7 @@ function panopoly_images_media_wysiwyg_wysiwyg_allowed_view_modes_alter(&$option
 /**
  * Implementation of hook_jorm_alter()
  */
-function panopoly_images_form_alter(&$form, &$form_state, $form_id) {
+function hot_pics_form_alter(&$form, &$form_state, $form_id) {
 
   // Remove some necessary image styles
   if ($form_id == 'ctools_entity_field_content_type_formatter_styles') {
@@ -54,7 +54,7 @@ function panopoly_images_form_alter(&$form, &$form_state, $form_id) {
       '#suffix' => '</div>',
     );
     $image_path = $form['#media']->uri;
-    $image_formats = array('panopoly_image_full', 'panopoly_image_half', 'panopoly_image_quarter');
+    $image_formats = array('hotsauce_image_full', 'hotsauce_image_half', 'hotsauce_image_quarter');
     foreach ($image_formats as $format) {
       $form['preload'][$format] = array(
         '#markup' => theme('image', array('path' => image_style_url($format, $image_path))),
@@ -74,7 +74,7 @@ function panopoly_images_form_alter(&$form, &$form_state, $form_id) {
  * This function is designed to readjust the width and height properties in the WYSIWYG.
  * See this issue for more background - http://drupal.org/node/1801308.
  */
-function panopoly_images_file_displays_alter(&$displays, &$file, &$view_mode) {
+function hot_pics_file_displays_alter(&$displays, &$file, &$view_mode) {
   if (!empty($file->override['attributes']['width'])) {
     $file->image_dimensions['width'] = $file->override['attributes']['width'];
   }
@@ -86,14 +86,14 @@ function panopoly_images_file_displays_alter(&$displays, &$file, &$view_mode) {
 /**
  * Implementation of hook_preprocess_image_style()
  */
-function panopoly_images_preprocess_image_style(&$variables) {
+function hot_pics_preprocess_image_style(&$variables) {
   $variables['attributes']['class'][] = str_replace('_', '-', $variables['style_name']);
 }
 
 /**
   * Implements hook_entity_info_alter().
   */
-function panopoly_images_entity_info_alter(&$entity_info) {
+function hot_pics_entity_info_alter(&$entity_info) {
   $entity_info['file']['view modes']['link'] = array(
     'label' => t('Link'),
     'custom settings' => TRUE,
@@ -108,7 +108,7 @@ function panopoly_images_entity_info_alter(&$entity_info) {
  * manualcrop enabled. If users want to use focal_point, they simply have
  * to disable manualcrop for that field.
  */
-function panopoly_images_field_widget_form_alter(&$element, &$form_state, $context) {
+function hot_pics_field_widget_form_alter(&$element, &$form_state, $context) {
   $widget = $context['instance']['widget'];
   if (module_exists('focal_point') && in_array('image', array_filter(variable_get("focal_point_enabled_for", array('image'))))) {
     if (manualcrop_supported_widgets($widget['type']) && !empty($widget['settings']['manualcrop_enable'])) {
